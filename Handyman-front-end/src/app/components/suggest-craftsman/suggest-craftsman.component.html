@@ -1,0 +1,242 @@
+<section class="page-cover" style=" background: url(../../../assets/images/page-cover.jpg) no-repeat scroll center 0;">
+  <div class="container">
+    <div class="m0" >
+      <h2>SUGGEST A CRAFTSMAN</h2>
+      <ol class="breadcrumb">
+        <li><a routerLink="/home">Home</a></li>
+        <li class="active">SUGGEST A CRAFTSMAN</li>
+      </ol>
+    </div>
+  </div>
+</section>
+<section id="section-content" class="content" style="margin-top: 50px">
+  <!-- flashbag -->
+
+  <!-- /flashbag -->
+
+  <!-- Breadcrumb / fil d'ariane-->
+  <div id="breadcrumb">
+    <div class="container">
+      <div class="navbar navbar-dark bg-warning">
+        <div class="col-md-1 hidden-sm hidden-xs"></div>
+        <div id="breadcrumb-step1" class="col-md-3 col-sm-3 col-xs-4 breadcrumb-step-label">
+          <span [ngClass]="{'font-weight-bold':!project.start_date}">1.&nbsp;&nbsp;Date</span>
+          <span class="visible-xs">&nbsp;Date</span>
+        </div>
+        <div class="col-md-1 col-sm-1 hidden-xs text-center colorOrange">
+          <div class="arrow-right title-step-disabled">
+            <i class="fa fa-angle-right fa-1x" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div id="breadcrumb-step2"
+             class="col-md-3 col-sm-3 col-xs-4 breadcrumb-step-label breadcrumb-step-disabled">
+          <span class="hidden-xs" [ngClass]="{'font-weight-bold':project.start_date&&!project.service}">2.&nbsp;&nbsp;Description of the need</span>
+          <span class="visible-xs">2.&nbsp;&nbsp;Description of the need</span>
+        </div>
+        <div class="col-md-1 col-sm-1 hidden-xs text-center colorOrange">
+          <div class="arrow-right title-step-disabled">
+            <i class="fa fa-angle-right fa-1x" aria-hidden="true"></i>
+          </div>
+        </div>
+        <div id="breadcrumb-step3"
+             class="col-md-3 col-sm-3 col-xs-4 breadcrumb-step-label breadcrumb-step-disabled">
+          <span class="hidden-xs" [ngClass]="{'font-weight-bold':project.service}">3.&nbsp;&nbsp;Quotation</span>
+          <span class="visible-xs">3.&nbsp;&nbsp;Quotation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /Breadcrumb / fil d'ariane-->
+
+  <!-- project -->
+  <div id="project">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12 text-center errorList">
+
+        </div>
+        <!-- formulaire -->
+        <div class="col-md-12">
+          <div id="project-body">
+            <form id="project-form" #myform="ngForm">
+
+              <!-- étape1 -->
+              <div id="project-form-step1" class="container-fluid" style="background: whitesmoke" *ngIf="!project.start_date">
+                <div class="row" style="margin-bottom: 50px;margin-top: 30px">
+                  <div class="col-md-12">
+                    <div class="project-title">
+                      <h2>Step 1: What date for your work?</h2>
+                    </div>
+                    <div>
+                      <input id="goStep3" type="hidden"
+                             value="false"/>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-4 col-sm-4 col-xs-6 text-center" style="margin-bottom: 70px">
+                    <label class="btn fa fa-clock-o fa-2x">
+                      <label class="icone-devis-label icone-devis-date colorPurple required big">Emergency
+                      <input type="radio" name="options" class="d-none" [value]="getdate(0)" [(ngModel)]="project.start_date">
+                      </label>
+                    </label>
+                  </div>
+                  <div class="col-md-4 col-sm-4 col-xs-6 text-center">
+                    <label class="btn fa fa-calendar fa-2x">
+                      <label class="icone-devis-label icone-devis-date colorPurple required big">Less than a month
+                      <input type="radio" name="options" class="d-none" [value]="getdate(1)" [(ngModel)]="project.start_date">
+                      </label>
+                    </label>
+                  </div>
+                  <div class="col-md-4 col-sm-4 col-xs-6 text-center">
+                    <label class="btn fa fa-calendar fa-2x">
+                      <label class="icone-devis-label icone-devis-date colorPurple required big">Less than 3 months
+                      <input type="radio" name="options" class="d-none" [value]="getdate(3)" [(ngModel)]="project.start_date">
+                      </label>
+                    </label>
+                  </div>
+                  <div class="col-md-4 col-sm-4 col-xs-6 text-center">
+                    <label class="btn fa fa-calendar fa-2x">
+                      <label class="icone-devis-label icone-devis-date colorPurple required big">Less than 6 months
+                      <input type="radio" name="options" class="d-none" [value]="getdate(6)" [(ngModel)]="project.start_date">
+                      </label>
+                    </label>
+                  </div>
+                  <div class="col-md-4 col-sm-4 col-xs-6 text-center">
+                    <label class="btn fa fa-calendar fa-2x">
+                      <label class="icone-devis-label icone-devis-date colorPurple required big">More than 6 months
+                      <input type="radio" name="options" class="d-none" [value]="getdate(7)" [(ngModel)]="project.start_date">
+                      </label>
+                    </label>
+                  </div>
+                  <div class="col-md-4 col-sm-4 col-xs-6 text-center" style="margin-bottom: 50px;">
+                    <label class="btn fa fa-calendar-times-o fa-2x">
+                      <label class="icone-devis-label icone-devis-date colorPurple required big">No fixed date
+                      <input type="radio" name="options" class="d-none" [value]="getdate(0)" [(ngModel)]="project.start_date">
+                      </label>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <!-- /étape1 -->
+
+              <!-- etape2 -->
+              <div id="project-form-step2" class="container-fluid" style="background: whitesmoke" *ngIf="project.start_date&&!project.service">
+                <div class="row" style="margin-bottom: 50px;margin-top: 30px">
+                  <div class="col-md-12">
+                    <div class="project-title">
+                      <h2>Step 2 : Description du besoin</h2>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3 col-sm-4 col-xs-6 text-center" style="margin-bottom: 70px">
+                    <label class="btn fa fa-paint-brush fa-2x">
+                      <label class="icone-devis-label icone-devis-date colorPurple required big">Wall and floor painting
+                      <input type="radio" name="options" class="d-none" value="painting" [(ngModel)]="project.service">
+                      </label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-4 col-xs-6 text-center">
+                    <label class="btn fa fa-pencil fa-2x">
+                      <label class="icone-devis-label icone-devis-date colorPurple required big">Interior design
+                      <input type="radio" name="options" class="d-none" value="interior design" [(ngModel)]="project.service">
+                      </label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-4 col-xs-6 text-center">
+                    <label class="btn fa fa-wrench fa-2x">
+                      <label class="icone-devis-label icone-devis-date colorPurple required big">Heating plumbing
+                      <input type="radio" name="options" class="d-none" value="plumber" [(ngModel)]="project.service">
+                      </label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-4 col-xs-6 text-center">
+                    <label class="btn fa fa-bolt fa-2x">
+                      <label class="icone-devis-label icone-devis-date colorPurple required big">Home automation electricity
+                      <input type="radio" name="options" class="d-none" value="electricity" [(ngModel)]="project.service">
+                      </label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-4 col-xs-6 text-center">
+                    <label class="btn fa fa-tree fa-2x">
+                      <label class="icone-devis-label icone-devis-date colorPurple required big">Outdoor garden
+                      <input type="radio" name="options" class="d-none" value="gardening" [(ngModel)]="project.service">
+                      </label>
+                    </label>
+                  </div>
+                  <div class="col-md-3 col-sm-4 col-xs-6 text-center">
+                    <label class="btn fa fa-building fa-2x">
+                      <label class="icone-devis-label icone-devis-date colorPurple required big">Construction works
+                      <input type="radio" name="options" class="d-none" value="construction" [(ngModel)]="project.service">
+                      </label>
+                    </label>
+                  </div>
+
+                </div>
+              </div>
+              <!-- /etape2 -->
+
+              <!-- etape3  -->
+              <div id="project-form-step3" class="container-fluid" style="background: whitesmoke" *ngIf="project.service">
+                <div class="row" style="margin-bottom: 50px;margin-top: 30px">
+                  <div class="col-md-12">
+                    <div class="project-title">
+                      <h2>Final Step</h2>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="nbrDevisDiv">
+                  <div class="form-group has-feedback row">
+                    <div style="text-align: center;width: -webkit-fill-available"><label class="btn fa fa-sticky-note fa-4x"></label><h2>you will be receiving 3 or more quotations</h2></div>
+                    <div id="nbrDevisDivErrors" class="col-md-12 col-sm-12 col-xs-12 text-center help-block with-errors">
+
+                    </div>
+                  </div>
+                </div>
+                <div id="form-project-inputs-div" class="row">
+                    <h4>Enter your details to receive your quotations</h4>
+                  <div class="container-fluid">
+                    <div class="row">
+                      <div id="project-form-name-div"
+                           class="col-md-4 col-sm-12 col-xs-12 form-group has-feedback">
+                        <input type="text" id="create_project_full_form_nom" name="create_project_full_form[nom]" required="required" placeholder="Project Title" class="form-control" autocomplete="off" [(ngModel)]="project.title"/>
+                        <span class="glyphicon form-control-feedback"
+                              aria-hidden="true"></span>
+                      </div>
+                      <div id="project-form-cp-div"
+                           class="col-md-4 col-sm-12 col-xs-12 form-group has-feedback">
+                        <input type="text" id="create_project_full_form_cp" name="create_project_full_form[cp]" required="required" placeholder="Adress" class="form-control" autocomplete="off" [(ngModel)]="project.address" />
+                        <span class="glyphicon form-control-feedback"
+                              aria-hidden="true"></span>
+                      </div>
+                      <div id="project-form-phone-div"
+                           class="col-md-4 col-sm-12 col-xs-12 form-group has-feedback">
+                        <input type="text" id="create_project_full_form_phone" name="create_project_full_form[phone]" required="required" placeholder="Description" class="form-control" autocomplete="off" [(ngModel)]="project.description" />
+                        <span class="glyphicon form-control-feedback"
+                              aria-hidden="true"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row text-center">
+                  <div class="col-md-12">
+                    <button class="btn btn-dark" (click)="onSubmit()">Send</button>
+                  </div>
+                </div>
+
+              </div>
+              <!-- /etape3  -->
+              <input type="hidden" id="create_project_full_form__token" name="create_project_full_form[_token]" value="GziCZxHXfrGd1VEsUwqMV1OHMNw5DhkBP7aGIlj1IVI" />
+            </form>
+          </div>
+        </div>
+
+        <!-- /formulaire -->
+      </div>
+    </div>
+  </div>
+  <!-- /project -->
+<!-- /le devis va vous permettre -->
+</section>

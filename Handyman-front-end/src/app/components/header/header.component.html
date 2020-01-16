@@ -1,0 +1,158 @@
+<header class="header-top home-two">
+
+  <div class="container">
+
+    <div class="logo pull-left">
+
+
+
+
+      <a routerLink="/home"><img src="../../../assets/images/logo3.png" alt="Awesome Image"/></a>
+
+
+
+
+    </div><!-- /.logo pull-left -->
+
+    <div class="header-right-info pull-right">
+
+      <div class="single-header-right-info">
+
+        <div class="icon-box">
+
+          <i class="pro-master-icon-smartphone"></i>
+
+        </div><!-- /.icon-box -->
+
+        <div class="text-box">
+
+
+
+
+          <h3>(+216) 71 703 829</h3>
+
+
+
+
+
+          <p>Mon - Sat 9.00 - 19.00</p>
+
+
+
+
+        </div><!-- /.text-box -->
+
+      </div><!-- /.single-header-right-info -->
+
+      <div class="single-header-right-info">
+
+        <div class="icon-box">
+
+          <i class="pro-master-icon-mail"></i>
+
+        </div><!-- /.icon-box -->
+
+        <div class="text-box">
+
+
+
+
+          <h3>Insat@rnu</h3>
+
+
+
+
+
+          <p>Mail us</p>
+
+
+
+
+        </div><!-- /.text-box -->
+
+      </div><!-- /.single-header-right-info -->
+
+
+
+
+      <div class="single-header-right-info">
+
+        <a *ngIf="!isLoggedIn" (click)="openDialog()" class="header-btn" style="cursor: pointer">Log In<i class="fa fa-angle-double-right"></i></a>
+        <div *ngIf="isLoggedIn" class="header-navigation">
+          <ul  class="navigation-box" style="height: 30px">
+            <li style="padding-top: inherit">
+              <a style="cursor: pointer" routerLink="/SearchArtisan/{{artisan.id}}" *ngIf="isArtisan">
+              <img src="../../../assets/images/login.png" alt="" class="img-fluid rounded-circle z-depth-0" style="width: 40px">
+              </a>
+              <a style="cursor: pointer" *ngIf="isUser">
+                <img src="../../../assets/images/login.png" alt="" class="img-fluid rounded-circle z-depth-0" style="width: 40px">
+              </a>
+              <ul class="sub-menu" style="min-width: 175px">
+                <li *ngIf="isArtisan">
+                  <a routerLink="/artisan/list-project-propositions" class="notification">
+                    <span>Notifications</span>
+                    <span class="badge">{{listProject.length}}</span>
+                  </a>
+                </li>
+                <li *ngIf="isArtisan">
+                  <a style="cursor: pointer" routerLink="/edit/{{artisan.id}}">Edit My Account</a>
+                </li>
+                <li *ngIf="isUser">
+                  <a style="cursor: pointer" routerLink="/client/projects">My Projects</a>
+                </li>
+                <li>
+                  <a style="cursor: pointer" (click)="Logout()">Log Out</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+
+
+
+
+    </div><!-- /.header-right-info -->
+
+  </div><!-- /.container -->
+
+</header><!-- /.header-top home-two -->
+
+
+
+<nav class="navbar navbar-default header-navigation stricky home-page-two">
+
+  <div class="container clearfix">
+
+    <!-- Brand and toggle get grouped for better mobile display -->
+
+    <div class="navbar-header">
+
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".main-navigation" aria-expanded="false"><i class="fa fa-bars"></i></button>
+
+    </div>
+
+
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+
+    <div class="collapse navbar-collapse main-navigation mainmenu " id="main-nav-bar">
+
+      <ul  class="nav navbar-nav navigation-box home-page-two2 ">
+        <li id="menu-item-417" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-has-children menu-item-417 dropdown"><a   title="HOME" class="321" routerLink="/home" routerLinkActive="current" role="button" aria-haspopup="true" aria-expanded="false">HOME<i class="icon-down-open-mini"></i></a>
+      </li>
+        <li id="menu-item-425" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-425 dropdown"><a   title="FIND A CRAFTSMAN" class="321" routerLink="/SearchArtisan" routerLinkActive="current" role="button" aria-haspopup="true" aria-expanded="false">FIND A CRAFTSMAN<i class="icon-down-open-mini"></i></a>
+        </li>
+        <li id="menu-item-784" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-784 dropdown"><a   title="SUGGEST A CRAFTSMAN" class="321" routerLink="/Suggest" routerLinkActive="current" role="button" aria-haspopup="true" aria-expanded="false">SUGGEST A CRAFTSMAN<i class="icon-down-open-mini"></i></a>
+        </li>
+        <li id="menu-item-450" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-450"><a   title="CONTACT US" class="123" routerLink="/contact" routerLinkActive="current">CONTACT US</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+
+  </div><!-- /.container -->
+
+</nav>
+
+

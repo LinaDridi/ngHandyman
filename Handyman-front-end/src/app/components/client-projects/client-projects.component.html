@@ -1,0 +1,116 @@
+<section class="row page-cover"
+         style="background: url(../../../assets/images/page-cover.jpg) no-repeat scroll center 0;">
+
+
+  <div class="container">
+
+    <div class="m0">
+
+      <h2>
+        Projects</h2>
+
+      <ol class="breadcrumb">
+
+        <li><a routerLink="/home">Home</a></li>
+
+        <li class="active">
+          My Projects
+        </li>
+
+      </ol>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="row blog_content">
+
+  <div class="blog_section">
+
+    <div class="blog_section_inner row m0">
+
+
+      <div *ngFor="let project of projects" class="row blog" style="width: inherit">
+
+        <!--        <div class="col-sm-6 project">-->
+        <div class="featured_img row m0">
+
+          <a><img alt="" class="img-responsive" src="../../../assets/images/4.jpg"></a>
+
+        </div>
+        <!--        </div>-->
+
+        <div class="media post-meta">
+
+
+          <div class="media-body media-bottom">
+
+            <h4 class="post-title">{{project.title}}</h4>
+
+            <ul class="post-infos nav">
+
+              <li><i class="fa fa-user"></i>By:{{project.client_username}}</li>
+
+
+              <li><i class="fa fa-tag"></i>{{project.address}} </li>
+
+
+              <li><i class="fa fa-calendar"></i>on:{{project.start_date}}
+                <i class="fa fa-calendar"></i>deadline:{{project.deadline}}
+              </li>
+              <li *ngIf="project.accepted_by_client">
+                <i class="fa fa-money"></i>cost:{{project.devis[0].cost}} {{project.devis[0].currency}}
+
+              </li>
+              <li>
+                <i class="fa fa-archive"></i>
+                State: {{project.state}}
+
+              </li>
+
+
+            </ul>
+
+
+          </div>
+
+        </div>
+
+
+        <div class="post-content row m0 d-block" style="overflow-wrap: break-word;width: inherit">
+
+
+          <div>
+            <p style="font-weight: bolder"> Poject Description: </p>{{project.description}}
+
+          </div>
+          <div>
+            <span>
+          <a (click)="openDialog(project)" *ngIf=" project.state !== 'started'"
+             class="read-more" style="cursor: pointer">
+            View Costs <i class="fa fa-angle-double-right"></i>
+          </a>
+              </span>
+            <span>
+            <a (click)="openDialog1(project.project_id)" *ngIf=" project.state === 'started'"
+               class="read-more" style="cursor: pointer"
+               style="    background-color: #777;
+    border-radius: 32px;
+    border-color: #777;">
+              Pay Online <i class="fa fa-angle-double-right"></i>
+            </a>
+            </span>
+          </div>
+          <div>
+
+          </div>
+        </div>
+
+      </div>
+      <!--Blog-->
+    </div>
+  </div>
+</section>
+

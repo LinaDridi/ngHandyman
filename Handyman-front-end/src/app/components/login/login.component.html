@@ -1,0 +1,64 @@
+
+<!--<h1  mat-dialog-title>Message</h1>
+<mat-dialog-content>  </mat-dialog-content>
+<mat-dialog-actions>
+<button  mat-raised-button>Close</button>
+</mat-dialog-actions>
+-->
+
+<mat-card>
+    <div *ngIf="isLoggedIn; else loggedOut">
+  Logged in as {{roles}}.
+</div>
+
+
+<ng-template #loggedOut>
+ <h2 style="text-align: center" mat-card-title>Please Log in</h2>
+
+    <mat-card-content>
+        <form style="text-align: center" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+        <mat-form-field>
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input matInput   type="text" class="form-control" id="username" name="username" [(ngModel)]="form.username" #username="ngModel"
+               required />
+        <div *ngIf="f.submitted && username.invalid">
+          <div *ngIf="username.errors.required">Username is required</div>
+        </div>
+      </div>
+    </mat-form-field>
+    <mat-form-field>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input matInput type="password" class="form-control" id="password" name="password" [(ngModel)]="form.password" #password="ngModel"
+               required minlength="6" />
+        <div *ngIf="f.submitted && password.invalid">
+          <div *ngIf="password.errors.required">Password is required</div>
+          <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>
+        </div>
+      </div>
+    </mat-form-field>
+
+      <mat-card-actions>
+
+      <div class="form-group">
+        <button class="button" mat-raised-button >Login</button>
+        <div *ngIf="f.submitted && isLoginFailed" class="alert alert-danger" style="font-size: smaller;
+    padding: 7px;">
+          Login failed: {{errorMessage}}
+        </div>
+      </div>
+      </mat-card-actions>
+    </form >
+    <hr />
+    <p>Don't have an account?</p>
+      <span>
+    <button (click)="nav()" class="button">Sign Up Customer</button>
+      </span>
+      <span>
+      <button (click)="nav1()" class="button" style="margin-left: 60px;">Sign Up Craftsman</button>
+      </span>
+    </mat-card-content>
+  </ng-template>
+</mat-card>

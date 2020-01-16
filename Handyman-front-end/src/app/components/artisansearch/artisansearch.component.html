@@ -1,0 +1,33 @@
+<section class="page-cover" style=" background: url(../../../assets/images/page-cover.jpg) no-repeat scroll center 0;margin-bottom: 30px">
+  <div class="container">
+    <div class="m0" >
+      <h2>FIND A CRAFTSMAN</h2>
+      <ol class="breadcrumb">
+        <li><a routerLink="/home">Home</a></li>
+        <li class="active">FIND A CRAFTSMAN</li>
+      </ol>
+    </div>
+  </div>
+</section>
+<section class="team-style-one" style="background-color: #EEEEEE ">
+  <div class="container" style="display: grid">
+    <div class="title">
+      <h3>Our Workers</h3>
+    </div><!-- /.title -->
+    <app-search (sendFilter)="getfiltered($event)" style="margin: 0 auto;margin-bottom: 30px"></app-search>
+    <div class="row">
+      <div *ngFor="let artisan of artisans" class="col-md-3 col-sm-6 col-xs-12">
+        <div class="single-team-style-one">
+          <div class="img-box">
+            <img class="imgw" src="../../../assets/images/{{artisan.img}}" alt="Awesome Image"/>
+            <div class="social">
+              <button [routerLink]="artisan.id" class="btn btn-dark">See More</button>
+            </div>
+          </div>
+          <h3>{{artisan.firstname}}</h3>
+          <p>{{artisan.job}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

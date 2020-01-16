@@ -1,0 +1,210 @@
+<section class="static-banner-home-two">
+  <div class="container" style="background: transparent url(../../../assets/images/banner-2-1-man.png) -150% 0% no-repeat!important;">
+    <div class="row">
+      <div class="col-lg-8 col-md-7">
+        <div class="banner-content">
+          <h3>We Make<br />
+            <span>Better</span> Your Living</h3>
+          <p>By working with pros, we have developed proven expertise in maintenance for professionals.
+            Handyman is your privileged contact for all your maintenance concerns and your renovation projects..</p>
+          <div class="btn-box" style="margin-bottom: 20px">
+            <a routerLink="/contact" class="banner-btn style-one">Contact Us <i class="fa fa-angle-double-right"></i></a>
+            <a routerLink="/SearchArtisan" class="banner-btn style-two">Find A Craftsman <i class="fa fa-angle-double-right"></i></a>
+          </div><!-- /.btn-box -->
+        </div><!-- /.banner-content -->
+      </div><!-- /.col-md-8 -->
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</section>
+
+<section class="about-style-three">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-sm-12 col-xs-12 clearfix">
+        <img src="../../../assets/images/about-2-1.jpg" class="pull-right" alt="Awesome Image"/>
+      </div><!-- /.col-md-4 -->
+      <div class="col-md-8 col-sm-12 col-xs-12">
+        <div class="about-content">
+          <h3>About Our Firm</h3>
+          <p class="highlight">Leverage agile frameworks to provide a robust synopsis for high level overviews.</p><!-- /.highlight -->
+          <p>Handyman is an online platform for skills on demand around the craft trades (plumbing, electricity, refrigeration, masonry, air conditioning etc ...). It aims to simplify the search for a good craftsman for homework. Thanks to its various partners, Handyman offers quality services with certified equipment by allowing these customers to choose their service in a few clicks and schedule it according to their availability.</p>
+          <p>More than a simple connection, Handyman intends to make life easier for these customers by connecting them to the best craftsmen at all times and in all places, and respecting three promises: a simple, quality experience with the most commitment.</p>
+          <a routerLink="/contact" class="about-btn">Know more  <i class="fa fa-angle-double-right"></i></a>
+        </div><!-- /.about-content -->
+      </div><!-- /.col-md-8 -->
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</section>
+
+
+
+<section class="service-style-two gray-bg">
+  <div class="container">
+    <div class="title">
+      <h3>Our Services</h3>
+      <p>Liste des interventions les plus courantes
+      </p>
+    </div><!-- /.title -->
+
+      <owl-carousel-o [options]="customOptions">
+
+        <ng-container *ngFor="let slide of services">
+          <ng-template carouselSlide>
+            <div class="item" style="margin-right: 30px">
+            <div class="single-service-style-two">
+            <img class="img-box" src="../../../assets/images/services.jpg">
+            <div class="text-box">
+              <a><h3>{{slide}}</h3></a>
+<!--              <p>Whether another or built up business or association, you can look to us to best lucid who you are, your main event, and above all.</p>-->
+            </div>
+            </div>
+            </div>
+          </ng-template>
+        </ng-container>
+
+      </owl-carousel-o>
+
+  </div><!-- /.container -->
+</section>
+
+
+<section class="feature-style-two">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <img src="../../../assets/images/feature-2-1.jpg" class="featured-image pull-right" alt="Awesome Image"/>
+      </div><!-- /.col-md-4 -->
+      <div class="col-md-7">
+        <div class="features-content">
+          <h3>We're available for about solving your home problem</h3>
+          <span>Bring to the table win survival strategies to ensure proactive.</span>
+          <p>
+            Describe your problem, get a price range, practical information and the expertise of a professional craftsman.</p>
+          <ul class="list-items">
+
+            <li><i class="pro-master-icon-tick"></i>24 -Hours Emergency Services</li>
+
+            <li><i class="pro-master-icon-tick"></i>Uniformed, Licensed Plumbers</li>
+
+            <li><i class="pro-master-icon-tick"></i>Licensed and Insured</li>
+
+            <li><i class="pro-master-icon-tick"></i>Free Estimates</li>
+
+            <li><i class="pro-master-icon-tick"></i>No Travel Charges</li>
+
+
+          </ul><!-- /.list-items -->
+        </div><!-- /.features-content -->
+      </div><!-- /.col-md-8 -->
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</section>
+
+<section class="service-style-two white-bg" style="margin-top: 30px">
+  <div class="container">
+    <div class="title">
+      <h3>Our Workers</h3>
+      <p>All our labeled craftsmen have been incorporated for more than two years and we check their stability and their insurance certifications.</p>
+    </div><!-- /.title -->
+
+    <owl-carousel-o [options]="customOptions">
+
+      <ng-container *ngFor="let artisan of artisans">
+        <ng-template carouselSlide>
+          <div class="single-team-style-one" style="margin-right: 30px">
+            <div class="img-box">
+              <img class="imgw" src="../../../assets/images/{{artisan.img}}" alt="Awesome Image"/>
+              <div class="social">
+                <button routerLink="/SearchArtisan/{{artisan.id}}" class="btn btn-dark">See More</button>
+              </div>
+            </div>
+            <h3>{{artisan.firstname}}</h3>
+            <p>{{artisan.job}}</p>
+          </div>
+        </ng-template>
+      </ng-container>
+
+    </owl-carousel-o>
+
+  </div><!-- /.container -->
+</section>
+
+
+
+
+
+<section class="blog-area gray-bg">
+  <div class="container">
+    <div class="title">
+      <h3>Latest News</h3>
+    </div><!-- /.title -->
+    <div class="row">
+
+
+
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="single-blog-post">
+          <div class="img-box">
+            <img src="../../../assets/images/blog3.jpg" alt="Awesome Image"/>
+            <div class="date-box">Oct 18 2018</div><!-- /.date-box -->
+          </div><!-- /.img-box -->
+          <a><h3>We know your home problem</h3></a>
+          FOUNDATION CRACKS. One of the most obvious signs that you've got a problem with foundation sinking or settling is finding noticeable cracks in your foundation walls.           <a class="read-more">                            Read More </a>
+        </div><!-- /.single-blog-post -->
+      </div><!-- /.col-md-4 -->
+
+
+
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="single-blog-post">
+          <div class="img-box">
+            <img src="../../../assets/images/blog1.jpg" alt="Awesome Image"/>
+            <div class="date-box">Oct 18 2018</div><!-- /.date-box -->
+          </div><!-- /.img-box -->
+          <a><h3>Repairing of floor</h3></a>
+          <p>                              Squeaky stairs are easy to fix from underneath—provided they’re exposed. A simple fix is to tap shims into voids between the treads and the stringers and add some glue. Then screw the stringer to each stud. But most stairs are finished on the underside with drywall or plaste                            </p>
+          <a class="read-more">                            Read More </a>
+        </div><!-- /.single-blog-post -->
+      </div><!-- /.col-md-4 -->
+
+
+
+
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <div class="blog-post-list">
+
+
+
+
+
+
+          <div class="single-post-list">
+            <a><h3>Repairing of Instruments</h3></a>
+            <span>Oct 18 2018</span>
+          </div>
+
+
+
+
+          <div class="single-post-list">
+            <a><h3>We take care of your renovation</h3></a>
+            <span>Oct 18 2018</span>
+          </div>
+
+
+
+
+          <div class="single-post-list">
+            <a><h3>We take care of your renovation</h3></a>
+            <span>Sep 28 2018</span>
+          </div>
+
+
+
+        </div><!-- /.blog-post-list -->
+      </div><!-- /.col-md-4 -->
+    </div><!-- /.row -->
+  </div><!-- /.thm-container -->
+</section>
+
+<div class="row m0" style="line-height: 0px!important;width: 100%"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9546.27257827996!2d-122.06991439229918!3d37.3806353530412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb6dfa37b89ff%3A0xbde82f07e361daff!2sSylvan+Park!5e0!3m2!1svi!2s!4v1540263707723" style="border:0; width:100%; height:415px;" allowfullscreen></iframe></div>
